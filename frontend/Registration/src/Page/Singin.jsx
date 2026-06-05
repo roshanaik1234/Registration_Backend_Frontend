@@ -49,6 +49,7 @@ const SignIn = () => {
     .then(data => {
       setLoading(false); // ← stop loading after response
       if (data.success) {
+        sessionStorage.setItem("token",data.token)
         alert("Login successful! Welcome back.");
         navigate("/dashboard"); // ← uncomment this!
       } else {
